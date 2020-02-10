@@ -16,21 +16,7 @@ namespace Slider.Controllers
             return View();
         }
 
-        public ActionResult About()
-        {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
-        }
-
-        public ActionResult Send(string path)
+        public ActionResult Send(string path, string email)
         {
             smtpClient.EnableSsl = true;
             smtpClient.Timeout = 10000;
@@ -41,7 +27,7 @@ namespace Slider.Controllers
 
             string pathHTML = Server.MapPath("/") + "Content\\PageSend\\index.html";
             string Body = System.IO.File.ReadAllText(pathHTML);
-            MailMessage msg = new MailMessage("onima3145@gmail.com", "morozkooleh1995@gmail.com", "HELLO!", Body);
+            MailMessage msg = new MailMessage("onima3145@gmail.com", email, "HELLO!", Body);
             msg.IsBodyHtml = true;
 
             Attachment attachment = new Attachment(Server.MapPath("/") + path);
