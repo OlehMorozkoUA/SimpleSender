@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Docoment</title>
+    <style>
+        .shadow {
+            background: rgb(63,94,251);
+            background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(82,179,121,0.9472163865546218) 37%, rgba(252,70,107,1) 100%);
+            box-shadow: 10px 10px 5px grey;
+            padding: 10px;
+            margin: 0px auto;
+            border: 1px solid black;
+            border-radius: 20px;
+            width: 450px;
+        }
+
+        .image {
+            border: 2px solid black;
+            box-shadow: 10px 10px 5px grey;
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+    <h1>Hello world</h1>
+    <div class="shadow">
+        <h2>Dear Tusya</h2>
+        <p id="animation">
+            How are you?
+        </p>
+        <img class="image" width="400" src="cid:flower" />
+    </div>
+    <script>
+        var animation = document.getElementById("animation");
+        animation.style.color = "red";
+    </script>
+</body>
+</html>
